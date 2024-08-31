@@ -4,9 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them!
-*/
 @font-face {
     font-family: "Neue" ;
     src: url('/assets/fonts/NeueHaasDisplayBold.ttf') format('truetype');
@@ -97,19 +94,22 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6 text-[#FDFDFD];
 }
 
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+.white_btn {
+  @apply rounded-full border border-white py-1.5 px-5 transition-all bg-[#FDFDFD] hover:bg-black hover:text-[#FDFDFD] text-black text-center text-sm font-inter flex items-center justify-center;
 }
+.white_outline_btn {
+    @apply rounded-full border border-white py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  }
 
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply text-gray-gradient font-bold sm:text-7xl text-6xl
 }
 
 .orange_gradient {
@@ -125,7 +125,7 @@
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-5 text-lg text-gray-400 sm:text-xl max-w-2xl;
 }
 
 .search_input {
@@ -137,12 +137,40 @@
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border border-gray-900 bg-opacity-0 shadow-[inset_10px_-50px_94px_0_rgb(200,200,200,0.1)] backdrop-filter backdrop-blur-md p-5;
 }
 
 .prompt_layout {
   @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #09090a;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #5c5c7b;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
+  }
+
+
+.common-container {
+    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-8 lg:p-14 custom-scrollbar;
+  }
+
+  .admin-user_details {
+    @apply bg-dark-3 flex gap-5 lg:gap-7 flex-1 items-start p-8 rounded-[30px] ;
+  }
 
 /* Feed Component */
 .feed {
@@ -151,30 +179,32 @@
 
 /* Form Component */
 .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-100 font-neue font-medium outline-0 bg-light-3/5;
 }
 
 .form_input {
-  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-100 outline-0 bg-light-3/5 font-neue font-medium;
 }
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-semibold text-lg tracking-wide;
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-3 w-full p-4 rounded-2xl border border-white/30 min-w-[140px] flex flex-col gap-2 justify-end items-end;
 }
 
 .dropdown_link {
-  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+  @apply text-sm font-satoshi tracking-wide hover:text-gray-500 font-medium;
 }
 
 /* PromptCard Component */
 .prompt_card {
   @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
 }
+
+
 
 .flex-center {
   @apply flex justify-center items-center;
@@ -191,3 +221,109 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+@layer components {
+    /* SHADCN COMPONENTS */
+    /* Form */
+    .shad-form_label {
+      @apply text-white !important;
+    }
+
+    .shad-form_message {
+      @apply text-red !important;
+    }
+
+    .shad-input {
+      @apply h-12 bg-dark-4 border-none placeholder:text-light-4 focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    }
+
+    .shad-textarea {
+      @apply h-36 bg-dark-3 rounded-xl border-none focus-visible:ring-1 focus-visible:ring-offset-1 ring-offset-light-3 !important;
+    }
+
+    /* Button */
+    .shad-button_primary {
+      @apply bg-primary-500 hover:bg-primary-500 text-light-1 flex gap-2 !important;
+    }
+    .shad-button_secondary {
+      @apply border border-[grey] text-light-1 flex gap-2 !important;
+    }
+
+    .shad-button_dark_4 {
+      @apply h-10 bg-dark-4 px-5 text-light-1 flex gap-2 !important;
+    }
+
+    .shad-button_light_3 {
+      @apply h-10 bg-dark-4 px-5 text-light-3 font-semibold flex gap-2 !important;
+    }
+
+    .shad-button_ghost {
+      @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-white !important;
+    }
+  }
+/* TYPOGRAHY */
+  .text-gray-gradient {
+    @apply bg-gradient-to-b from-slate-100 to-zinc-400 bg-clip-text text-transparent !important;
+  }
+  .h1-bold {
+    @apply text-[36px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .h1-semibold {
+    @apply text-[36px] font-semibold leading-[140%] tracking-tighter;
+  }
+
+  .h2-bold {
+    @apply text-[30px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .h3-bold {
+    @apply text-[24px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .base-semibold {
+    @apply text-[16px] font-semibold leading-[140%] tracking-tighter;
+  }
+
+  .base-medium {
+    @apply text-[16px] font-medium leading-[140%];
+  }
+
+  .base-regular {
+    @apply text-[16px] font-normal leading-[140%];
+  }
+
+  .body-bold {
+    @apply text-[18px] font-bold leading-[140%];
+  }
+
+  .body-medium {
+    @apply text-[18px] font-medium leading-[140%];
+  }
+
+  .small-semibold {
+    @apply text-[14px] font-semibold leading-[140%] tracking-tighter;
+  }
+
+  .small-medium {
+    @apply text-[14px] font-medium leading-[140%];
+  }
+
+  .small-regular {
+    @apply text-[14px] font-normal leading-[140%];
+  }
+  .smallest-regular {
+    @apply text-[10px] font-normal leading-[140%];
+  }
+
+  .subtle-semibold {
+    @apply text-[12px] font-semibold leading-[140%];
+  }
+
+  .tiny-semibold {
+    @apply text-[10px] font-semibold leading-[140%];
+  }
+
+  .tiny-medium {
+    @apply text-[10px] font-medium leading-[140%];
+  }
