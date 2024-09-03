@@ -3,12 +3,13 @@ import { useState } from "react"
 import Image from "next/image"
 import { useSession } from "next-auth/react"
 import { usePathname, useRouter } from "next/navigation"
-import Link from "next/link";
+import ReadMoreText from "@utils/Readmore"
 
 const PromptCard = ({ post , handleTagClick, handleEdit, handleDelete }) => {
     const [isCopied, setIsCopied] = useState("");
     const { data: session } = useSession();
     const pathName = usePathname();
+    const router = useRouter();
 
 
     const handleCopy = () =>{
@@ -17,10 +18,18 @@ const PromptCard = ({ post , handleTagClick, handleEdit, handleDelete }) => {
         setTimeout(() => setIsCopied(""),5000)
     }
 
+    const handleProfileClick = () => {
+        if (post.creator._id === session?.user.id) return router.push("/profile");
+        router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
+      };
+
   return (
     <div className="prompt_card">
         <div className="flex justify-between items-start gap-5 ">
-            <Link  href={`/profile/${post.creator._id}`} className="flex flex-1 justify-start items-center gap-3 cursor-pointer">
+            <div
+            className="flex flex-1 justify-start items-center gap-3 cursor-pointer"
+            onClick={handleProfileClick}
+            >
                 <Image
                 src={post.creator.image}
                 alt="creator"
@@ -30,11 +39,11 @@ const PromptCard = ({ post , handleTagClick, handleEdit, handleDelete }) => {
                 />
 
                 <div className="flex flex-col">
-                    <h3 className="font-semibold text-gray-300 tracking-wider font-satoshi">{post.creator.username}</h3>
+                    <h3 className="font-semibold text-gray-300 tracking-wider font-neue">{post.creator.username}</h3>
                     <p className="text-sm text-gray-400">{post.creator.email}</p>
                 </div>
 
-            </Link>
+            </div>
 
             <div className="copy_btn" onClick={handleCopy}>
                 <Image
@@ -47,7 +56,8 @@ const PromptCard = ({ post , handleTagClick, handleEdit, handleDelete }) => {
                 />
             </div>
         </div>
-        <p className="my-4 text-sm tracking-wider font-neue">{post.prompt}</p>
+        {/* <p className="my-4 text-sm tracking-wider font-neue">{post.prompt}</p> */}
+        <ReadMoreText text={post.prompt} />
         <p className="text-blue-300 text-md font-satoshi cursor-pointer"
             onClick={() => handleTagClick && handleTagClick(post.tag)}
         >#{post.tag}</p>

@@ -11,8 +11,8 @@
 }
 @font-face {
     font-family: "Neue" ;
-    src: url('/assets/fonts/NeueHaasDisplayMedium.ttf') format('truetype');
-    font-weight:500;
+    src: url('/assets/fonts/NeueHaasDisplayMediu.ttf') format('truetype');
+    font-weight:600;
 }
 @font-face {
     font-family: "Neue" ;
@@ -270,6 +270,10 @@
   }
   .h1-bold {
     @apply text-[36px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .read_text {
+    @apply text-sm text-rose-300 !important;
   }
 
   .h1-semibold {
