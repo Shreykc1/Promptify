@@ -97,7 +97,8 @@
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6 text-[#FDFDFD];
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6 text-[#FDFDFD]
+  ;
 }
 
 .white_btn {
@@ -147,28 +148,28 @@
   @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 3px;
     height: 3px;
     border-radius: 2px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: #09090a;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: #5c5c7b;
     border-radius: 50px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  ::-webkit-scrollbar-thumb:hover {
     background: #7878a3;
   }
 
 
 .common-container {
-    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-8 lg:p-14 custom-scrollbar;
+    @apply flex flex-col flex-1 items-center gap-10 overflow-scroll py-10 px-5 md:px-8 lg:p-14;
   }
 
   .admin-user_details {
@@ -266,7 +267,7 @@
   }
 /* TYPOGRAHY */
   .text-gray-gradient {
-    @apply bg-gradient-to-b from-slate-100 to-zinc-400 bg-clip-text text-transparent !important;
+    @apply bg-gradient-to-b from-slate-100 to-zinc-600 bg-clip-text text-transparent !important;
   }
   .h1-bold {
     @apply text-[36px] font-bold leading-[140%] tracking-tighter;

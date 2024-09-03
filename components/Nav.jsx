@@ -3,11 +3,13 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { signIn, signOut, useSession, getProviders } from "next-auth/react"
+import { usePathname } from "next/navigation"
 
 const Nav = () => {
      const { data: session } = useSession();
     const [providers, setProviders] = useState(null);
-    const [toggleDropDown, setToggleDropDown] = useState(false)
+    const [toggleDropDown, setToggleDropDown] = useState(false);
+    const pathName = usePathname();
     useEffect(()=>{
         const setProvidersFn = async () => {
             const response = await getProviders();
@@ -16,9 +18,9 @@ const Nav = () => {
         setProvidersFn();
     },[])
 
-
+const navMargin = pathName === "/" ? "mb-56" : "mb-24";
   return (
-    <nav className="flex-between w-full pt-3 mt-7">
+    <nav className={`flex-between w-full pt-3 mt-7  ${navMargin}`}>
         <Link href="/" className="flex gap-2 flex-center">
             <Image
             src="/assets/images/logo.svg"
