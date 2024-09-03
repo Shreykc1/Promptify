@@ -24,9 +24,12 @@
     src: url('/assets/fonts/NeueHaasDisplayLight.ttf') format('truetype');
     font-weight:200;
 }
-
+::selection{
+    background-color: #F8F8FD;
+    color: #09090A;
+}
 .main {
-    background-color: #09090A;
+  background-color: #09090A;
   width: 100vw;
   min-height: 100vh;
   position: fixed;
@@ -109,7 +112,7 @@
 }
 
 .head_text {
-  @apply text-gray-gradient font-bold sm:text-7xl text-6xl
+  @apply text-gray-gradient font-bold sm:text-7xl text-6xl font-neue
 }
 
 .orange_gradient {
@@ -133,7 +136,7 @@
 }
 
 .copy_btn {
-  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+  @apply w-8 h-8 rounded-full bg-transparent backdrop-blur flex justify-center items-center cursor-pointer;
 }
 
 .glassmorphism {
@@ -192,7 +195,7 @@
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-4 rounded-2xl border border-white/30 min-w-[140px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-3 w-full p-4 rounded-2xl border border-white/30 min-w-[140px] flex flex-col gap-2 justify-end items-end bg-dark-3 z-50;
 }
 
 .dropdown_link {
@@ -201,7 +204,7 @@
 
 /* PromptCard Component */
 .prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+  @apply flex-1 break-inside-avoid rounded-lg border border-gray-700 bg-white/10 bg-clip-padding p-6 pb-4 backdrop-blur-md backdrop-filter md:w-[360px] w-full h-fit;
 }
 
 
