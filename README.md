@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" id="title">Promptify</h1>
 
-## Getting Started
+<p align="center"><img src="https://socialify.git.ci/Shreykc1/Promptify/image?font=Raleway&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Formal%20Invitation&amp;stargazers=1&amp;theme=Dark" alt="project-image"></p>
 
-First, run the development server:
+Discover and share writing prompts effortlessly with Promptify! Our app makes it easy to spark inspiration and connect with a vibrant community of writers. Dive into a world of creativity today!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<p align="center"><img src="https://img.shields.io/badge/NextJS-white" alt="shields"><img src="https://img.shields.io/badge/MongoDB-green" alt="shields"><img src="https://img.shields.io/badge/NextAuth-blue" alt="shields"></p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h2>🚀 Demo</h2>
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+[https://promptify-rose.vercel.app/](https://promptify-rose.vercel.app/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<h2>Project Screenshots:</h2>
 
-## Learn More
+<img src="https://cloud.appwrite.io/v1/storage/buckets/667c8d23002acab49636/files/66d7d7d0001392cffc47/view?project=667c7b0f00312f83d8cb&amp;project=667c7b0f00312f83d8cb&amp;mode=admin" alt="project-screenshot" width="100%" height="400/">
 
-To learn more about Next.js, take a look at the following resources:
+  
+  
+<h2>🧐 Features</h2>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here're some of the project's best features:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+*   Free to use
+*   Open Source
+*   One Click Copy
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<h2>🍰 Contribution Guidelines:</h2>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Mail to shrey.work.dev@gmail.com
+
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   Next JS
+*   Tailwind CSS
+*   MongoDB
+*   NextAuth
