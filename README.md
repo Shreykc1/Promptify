@@ -6,7 +6,7 @@ Discover and share writing prompts effortlessly with Promptify! Our app makes it
 
 <p align="center"><img src="https://img.shields.io/badge/NextJS-white" alt="shields"><img src="https://img.shields.io/badge/MongoDB-green" alt="shields"><img src="https://img.shields.io/badge/NextAuth-blue" alt="shields"></p>
 
-<h2>🚀 Demo</h2>
+<h2>🚀 Please Visit</h2>
 
 [https://promptify-rose.vercel.app/](https://promptify-rose.vercel.app/)
 
